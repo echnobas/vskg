@@ -32,7 +32,7 @@ int main() {
                             { 4340, "Enterprise 2019", 0x98967f },
                             { 4353, "Professional 2019", 0x5b8d7f } };
     constexpr size_t CFG_SZ = sizeof(CFG) / sizeof(CFG[0]);
-    
+
     size_t max_product_sz = std::strlen(CFG[0].pretty);
     for (size_t i = 0; i < CFG_SZ; i++)
         if (std::strlen(CFG[i].pretty) > max_product_sz)
