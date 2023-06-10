@@ -30,7 +30,7 @@ std::string ProductKey::to_product_key() {
     assert(static_cast< uint64_t >(raw_key >> 113 & 1) == this->upgrade ? 1 : 0);
     assert(static_cast< uint64_t >(raw_key >> 114 & 1) == this->extra ? 1 : 0);
 
-    // Our raw_key has stayed within 24^25 but overflowed 2^114
+    // Our raw_key has overflowed 24^25 (2^114.62406251802891), we can only set the 115th bit if this does *not* happen
     if (this->extra && raw_key > (static_cast< __uint128_t >(0x62A32B15518) << 72))
         return "";
 
