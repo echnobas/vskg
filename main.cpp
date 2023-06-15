@@ -6,8 +6,8 @@
 
 struct Product {
     uint32_t group;
+    size_t cumulative_range;
     const char *pretty;
-    const size_t cumulative_range;
 };
 
 class Random {
